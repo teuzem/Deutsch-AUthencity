@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #1a1a1a; /* Deep authority black */
+    --color-primary-foreground: #ffffff; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #dc2626; /* German flag red */
+    --color-secondary-foreground: #ffffff; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #ea580c; /* Energetic orange */
+    --color-accent-foreground: #ffffff; /* white */
+    
+    /* Background Colors */
+    --color-background: #fafafa; /* Warm neutral */
+    --color-surface: #ffffff; /* Pure white */
+    
+    /* Text Colors */
+    --color-text-primary: #111827; /* Near-black */
+    --color-text-secondary: #6b7280; /* Professional gray */
+    
+    /* Status Colors */
+    --color-success: #059669; /* Trustworthy green */
+    --color-success-foreground: #ffffff; /* white */
+    
+    --color-warning: #d97706; /* Attention-grabbing amber */
+    --color-warning-foreground: #ffffff; /* white */
+    
+    --color-error: #dc2626; /* Clear red */
+    --color-error-foreground: #ffffff; /* white */
+    
+    /* Border Colors */
+    --color-border: #e5e7eb; /* Light gray */
+    --color-border-accent: #ea580c; /* Energetic orange */
+    
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.06);
+    --shadow-dark: rgba(0, 0, 0, 0.15);
+    
+    /* Gradient Colors */
+    --gradient-authority: linear-gradient(135deg, #1a1a1a 0%, #dc2626 35%, #ea580c 70%, #fbbf24 100%);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  .font-heading {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  .font-caption {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .shadow-elevation-1 {
+    box-shadow: 0 1px 3px var(--shadow-light), 0 1px 2px var(--shadow-medium);
+  }
+  
+  .shadow-elevation-2 {
+    box-shadow: 0 4px 12px var(--shadow-dark);
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-quick {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale {
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  .gradient-authority {
+    background: var(--gradient-authority);
+  }
+}
